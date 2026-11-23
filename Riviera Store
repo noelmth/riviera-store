@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison d'Azur — Riviera Lifestyle</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#f4f0e8;
+  --blue:#172d40;
+  --sand:#d9cbb5;
+  --white:#fffdf8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--blue);font-family:'DM Sans',sans-serif}
+a{color:inherit;text-decoration:none}
+.topbar{text-align:center;background:var(--blue);color:white;padding:9px;font-size:10px;letter-spacing:2px}
+header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8d0c3}
+.logo{font-family:'Playfair Display',serif;font-size:25px;letter-spacing:2px}
+nav{display:flex;gap:30px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+.header-right{display:flex;gap:20px;font-size:12px}
+.hero{height:650px;position:relative;background:linear-gradient(90deg,rgba(8,26,39,.55),rgba(8,26,39,.05)),url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=85') center 55%/cover;display:flex;align-items:center;padding:8%;color:white}
+.hero-content{max-width:540px}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(48px,7vw,86px);line-height:1.04;margin-bottom:25px}
+.hero p{font-size:14px;line-height:1.8;max-width:390px;margin-bottom:32px;color:#f2eee7}
+.btn{display:inline-block;background:var(--cream);color:var(--blue);padding:16px 27px;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--cream);cursor:pointer;transition:.25s}
+.btn:hover{background:transparent;color:white}
+.section{padding:90px 7%}
+.section-heading{text-align:center;margin-bottom:45px}
+.section-heading small{letter-spacing:3px;font-size:10px;text-transform:uppercase}
+.section-heading h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:400;margin-top:12px}
+.intro{max-width:620px;margin:0 auto;text-align:center;line-height:1.9;color:#64717a;font-size:14px}
+.collections{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:50px}
+.collection{height:430px;position:relative;overflow:hidden;color:white}
+.collection img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.collection:hover img{transform:scale(1.04)}
+.collection:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.5))}
+.collection-text{position:absolute;z-index:1;bottom:35px;left:35px}
+.collection-text small{letter-spacing:3px;font-size:10px}
+.collection-text h3{font:38px 'Playfair Display',serif;margin:8px 0 17px}
+.collection-text a{font-size:10px;letter-spacing:2px;border-bottom:1px solid white;padding-bottom:6px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product-image{height:360px;background:#e7e0d4;overflow:hidden;position:relative}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.product:hover img{transform:scale(1.04)}
+.product-info{padding:17px 2px;display:flex;justify-content:space-between;gap:10px}
+.product-info h3{font-size:13px;font-weight:500}
+.product-info p{font-size:12px;margin-top:7px;color:#77818a}
+.add{border:1px solid var(--blue);background:transparent;padding:9px 12px;font-size:10px;cursor:pointer;white-space:nowrap}
+.add:hover{background:var(--blue);color:white}
+.story{display:grid;grid-template-columns:1fr 1fr;min-height:490px;background:#e8e0d3}
+.story img{width:100%;height:100%;object-fit:cover;min-height:400px}
+.story-content{padding:12%;display:flex;flex-direction:column;justify-content:center}
+.story-content small{font-size:10px;letter-spacing:3px}
+.story-content h2{font:43px 'Playfair Display',serif;font-weight:400;margin:18px 0}
+.story-content p{font-size:13px;line-height:2;color:#68747b;margin-bottom:25px}
+.story-content a{font-size:10px;letter-spacing:2px;border-bottom:1px solid;width:max-content;padding-bottom:7px}
+.newsletter{text-align:center;padding:90px 20px;background:var(--blue);color:white}
+.newsletter h2{font:40px 'Playfair Display',serif;font-weight:400;margin:12px 0}
+.newsletter p{font-size:13px;color:#c5ced2;margin-bottom:25px}
+.newsletter form{display:flex;max-width:420px;margin:auto}
+.newsletter input{flex:1;min-width:0;padding:15px;border:0;background:#f5f1e9}
+.newsletter button{border:0;padding:0 20px;background:#d9cbb5;color:var(--blue);letter-spacing:1px;font-size:10px;cursor:pointer}
+footer{padding:45px 7%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:11px;color:#68747b}
+footer .logo{color:var(--blue)}
+.cart-panel{position:fixed;right:0;top:0;width:min(390px,100%);height:100%;background:var(--white);z-index:10;padding:30px;transform:translateX(105%);transition:.3s;box-shadow:-10px 0 40px #0002;display:flex;flex-direction:column}
+.cart-panel.open{transform:translateX(0)}
+.cart-head{display:flex;justify-content:space-between;font:25px 'Playfair Display',serif;padding-bottom:25px;border-bottom:1px solid #ddd}
+.cart-close{border:0;background:none;font-size:23px;cursor:pointer}
+.cart-items{flex:1;overflow:auto;padding:20px 0}
+.cart-item{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eee;font-size:13px}
+.cart-item button{border:0;background:none;text-decoration:underline;cursor:pointer;font-size:11px}
+.cart-total{padding:20px 0;border-top:1px solid #ddd;display:flex;justify-content:space-between}
+.cart-note{font-size:11px;color:#777;line-height:1.6;margin-bottom:15px}
+.checkout{width:100%;background:var(--blue);color:white;padding:17px;border:0;letter-spacing:2px;cursor:pointer}
+.overlay{display:none;position:fixed;inset:0;background:#0006;z-index:9}
+.overlay.show{display:block}
+@media(max-width:700px){
+ header{height:70px;padding:0 5%}
+ nav{display:none}
+ .hero{height:570px;padding:7%}
+ .section{padding:65px 5%}
+ .collections{grid-template-columns:1fr}
+ .collection{height:360px}
+ .products{grid-template-columns:1fr 1fr;gap:12px}
+ .product-image{height:240px}
+ .product-info{flex-direction:column}
+ .add{width:100%}
+ .story{grid-template-columns:1fr}
+ .story img{height:300px;min-height:0}
+ .story-content{padding:45px 8%}
+ .section-heading h2{font-size:34px}
+ footer{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">L'ESPRIT DE LA RIVIERA — COLLECTION 01</div>
+
+<header>
+  <a class="logo" href="#">MAISON D'AZUR</a>
+  <nav>
+    <a href="#collections">Collections</a>
+    <a href="#shop">Boutique</a>
+    <a href="#histoire">Notre univers</a>
+  </nav>
+  <div class="header-right">
+    <a href="#shop">SHOP</a>
+    <a href="#" onclick="openCart();return false">PANIER (<span id="count">0</span>)</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Between the sea and the sun</div>
+    <h1>La Riviera,<br>autrement.</h1>
+    <p>Un vestiaire inspiré par les routes du Sud, les étés méditerranéens et l'élégance intemporelle de la Côte d'Azur.</p>
+    <a class="btn" href="#shop">Découvrir la collection</a>
+  </div>
+</section>
+
+<section class="section" id="collections">
+  <div class="section-heading">
+    <small>Explore our universe</small>
+    <h2>Deux univers. Une même élégance.</h2>
+  </div>
+  <p class="intro">Des paysages méditerranéens aux automobiles de légende, chaque pièce raconte un fragment de l'art de vivre du Sud.</p>
+  <div class="collections">
+    <div class="collection">
+      <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1000&q=85" alt="Paysage méditerranéen">
+      <div class="collection-text">
+        <small>01 — THE MEDITERRANEAN</small>
+        <h3>Riviera</h3>
+        <a href="#shop">DÉCOUVRIR</a>
+      </div>
+    </div>
+    <div class="collection">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Automobile sportive">
+      <div class="collection-text">
+        <small>02 — THE AUTOMOTIVE CLUB</small>
+        <h3>Automobile</h3>
+        <a href="#shop">DÉCOUVRIR</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="section-heading">
+    <small>Collection 01 / 2026</small>
+    <h2>Les pièces sélectionnées</h2>
+  </div>
+  <div class="products">
+    <article class="product">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" alt="T-shirt blanc">
+      </div>
+      <div class="product-info">
+        <div><h3>Riviera Essential Tee</h3><p>Écru · 32,90 €</p></div>
+        <button class="add" onclick="addToCart('Riviera Essential Tee',32.90)">AJOUTER</button>
+      </div>
+    </article>
+    <article class="product">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85" alt="T-shirt lifestyle">
+      </div>
+      <div class="product-info">
+        <div><h3>Monte-Carlo Edition</h3><p>Blanc · 34,90 €</p></div>
+        <button class="add" onclick="addToCart('Monte-Carlo Edition',34.90)">AJOUTER</button>
+      </div>
+    </article>
+    <article class="product">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85" alt="T-shirt bleu">
+      </div>
+      <div class="product-info">
+        <div><h3>Le Club — Navy</h3><p>Bleu marine · 32,90 €</p></div>
+        <button class="add" onclick="addToCart('Le Club — Navy',32.90)">AJOUTER</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="story" id="histoire">
+  <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=1200&q=85" alt="Architecture de la Riviera">
+  <div class="story-content">
+    <small>THE ART OF THE RIVIERA</small>
+    <h2>Un certain art de vivre.</h2>
+    <p>Inspirée par les façades ensoleillées, les routes côtières et les souvenirs d'été, Maison d'Azur imagine un vestiaire entre héritage méditerranéen et culture automobile.</p>
+    <a href="#collections">DÉCOUVRIR NOTRE UNIVERS</a>
+  </div>
+</section>
+
+<section class="newsletter">
+  <small>THE RIVIERA LETTER</small>
+  <h2>Quelques nouvelles du Sud.</h2>
+  <p>Inscrivez-vous pour découvrir les prochaines collections.</p>
+  <form onsubmit="event.preventDefault();alert('Merci ! La newsletter sera activée prochainement.');">
+    <input type="email" placeholder="Votre adresse e-mail" required>
+    <button type="submit">S'INSCRIRE</button>
+  </form>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="#">MAISON D'AZUR</a>
+  <span>© 2026 MAISON D'AZUR — TOUS DROITS RÉSERVÉS</span>
+  <span>CONTACT · INSTAGRAM · CONDITIONS</span>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart-panel" id="cart">
+  <div class="cart-head"><span>Votre panier</span><button class="cart-close" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cartItems">Votre panier est vide.</div>
+  <div class="cart-total"><strong>Total</strong><strong id="total">0,00 €</strong></div>
+  <p class="cart-note">Démonstration : le paiement en ligne n'est pas encore activé.</p>
+  <button class="checkout" onclick="alert('Le paiement sera disponible lors de la mise en place de la boutique officielle.')">COMMANDER</button>
+</aside>
+
+<script>
+let cart=[];
+function addToCart(name,price){
+  const found=cart.find(item=>item.name===name);
+  if(found) found.qty++;
+  else cart.push({name,price,qty:1});
+  updateCart();
+  openCart();
+}
+function updateCart(){
+  const count=cart.reduce((sum,item)=>sum+item.qty,0);
+  document.getElementById('count').textContent=count;
+  document.getElementById('cartItems').innerHTML=cart.length?cart.map((item,index)=>`
+    <div class="cart-item">
+      <div><strong>${item.name}</strong><br>${item.price.toFixed(2).replace('.',',')} € × ${item.qty}</div>
+      <div><button onclick="removeItem(${index})">Retirer</button></div>
+    </div>`).join(''):'Votre panier est vide.';
+  const total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
+  document.getElementById('total').textContent=total.toFixed(2).replace('.',',')+' €';
+}
+function removeItem(index){
+  cart.splice(index,1);
+  updateCart();
+}
+function openCart(){
+  document.getElementById('cart').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+function closeCart(){
+  document.getElementById('cart').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+</script>
+</body>
+</html>
