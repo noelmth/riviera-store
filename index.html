@@ -4,257 +4,430 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison d'Azur — Riviera Lifestyle</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<title>The Riviera Club — Côte d'Azur</title>
+<meta name="description" content="The Riviera Club. Un vestiaire inspiré par Monaco, Saint-Tropez et l'art de vivre de la Côte d'Azur.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --cream:#f4f0e8;
-  --blue:#172d40;
-  --sand:#d9cbb5;
-  --white:#fffdf8;
+:root{
+ --cream:#f4f0e8;
+ --blue:#172d40;
+ --sand:#d9cbb5;
+ --white:#fffdf8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--blue);font-family:'DM Sans',sans-serif}
 a{color:inherit;text-decoration:none}
-.topbar{text-align:center;background:var(--blue);color:white;padding:9px;font-size:10px;letter-spacing:2px}
-header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8d0c3}
-.logo{font-family:'Playfair Display',serif;font-size:25px;letter-spacing:2px}
-nav{display:flex;gap:30px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
-.header-right{display:flex;gap:20px;font-size:12px}
-.hero{height:650px;position:relative;background:linear-gradient(90deg,rgba(8,26,39,.55),rgba(8,26,39,.05)),url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=2000&q=85') center 55%/cover;display:flex;align-items:center;padding:8%;color:white}
-.hero-content{max-width:540px}
-.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;margin-bottom:22px}
-.hero h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(48px,7vw,86px);line-height:1.04;margin-bottom:25px}
-.hero p{font-size:14px;line-height:1.8;max-width:390px;margin-bottom:32px;color:#f2eee7}
-.btn{display:inline-block;background:var(--cream);color:var(--blue);padding:16px 27px;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--cream);cursor:pointer;transition:.25s}
+.topbar{text-align:center;background:var(--blue);color:white;padding:10px;font-size:9px;letter-spacing:3px}
+header{height:85px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8d0c3}
+.logo{text-align:center;font-family:'Playfair Display',serif;font-size:25px;letter-spacing:3px;line-height:1.2}
+.logo span{display:block;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:5px;margin-top:6px}
+nav{display:flex;gap:28px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}
+.header-right{font-size:11px;letter-spacing:1px}
+.menu{display:none;border:0;background:none;font-size:25px;color:var(--blue)}
+.hero{
+ min-height:600px;
+ position:relative;
+ background:linear-gradient(90deg,rgba(8,26,39,.58),rgba(8,26,39,.08)),
+ url('https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=2000&q=85') center 55%/cover;
+ display:flex;align-items:center;padding:8%;color:white
+}
+.hero-content{max-width:560px}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(48px,7vw,82px);line-height:1.05;margin-bottom:24px}
+.hero p{font-size:13px;line-height:2;max-width:410px;margin-bottom:30px;color:#f2eee7}
+.btn{display:inline-block;background:var(--cream);color:var(--blue);padding:16px 27px;font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--cream);transition:.25s}
 .btn:hover{background:transparent;color:white}
-.section{padding:90px 7%}
-.section-heading{text-align:center;margin-bottom:45px}
-.section-heading small{letter-spacing:3px;font-size:10px;text-transform:uppercase}
+.section{padding:85px 7%}
+.section-heading{text-align:center;margin-bottom:35px}
+.section-heading small{letter-spacing:4px;font-size:9px;text-transform:uppercase}
 .section-heading h2{font-family:'Playfair Display',serif;font-size:42px;font-weight:400;margin-top:12px}
-.intro{max-width:620px;margin:0 auto;text-align:center;line-height:1.9;color:#64717a;font-size:14px}
-.collections{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:50px}
-.collection{height:430px;position:relative;overflow:hidden;color:white}
-.collection img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.intro{max-width:600px;margin:auto;text-align:center;line-height:2;color:#68747b;font-size:13px}
+.collections{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:45px}
+.collection{height:390px;position:relative;overflow:hidden;color:white}
+.collection img{width:100%;height:100%;object-fit:cover;transition:.7s}
 .collection:hover img{transform:scale(1.04)}
-.collection:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.5))}
-.collection-text{position:absolute;z-index:1;bottom:35px;left:35px}
-.collection-text small{letter-spacing:3px;font-size:10px}
-.collection-text h3{font:38px 'Playfair Display',serif;margin:8px 0 17px}
+.collection:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.collection-text{position:absolute;z-index:1;bottom:30px;left:30px}
+.collection-text small{letter-spacing:3px;font-size:9px}
+.collection-text h3{font:38px 'Playfair Display',serif;margin:8px 0 15px}
 .collection-text a{font-size:10px;letter-spacing:2px;border-bottom:1px solid white;padding-bottom:6px}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.product-image{height:360px;background:#e7e0d4;overflow:hidden;position:relative}
-.product-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.product:hover img{transform:scale(1.04)}
-.product-info{padding:17px 2px;display:flex;justify-content:space-between;gap:10px}
-.product-info h3{font-size:13px;font-weight:500}
-.product-info p{font-size:12px;margin-top:7px;color:#77818a}
-.add{border:1px solid var(--blue);background:transparent;padding:9px 12px;font-size:10px;cursor:pointer;white-space:nowrap}
+
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.product-image{height:340px;background:#e7e0d4;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.product-image svg{width:100%;height:100%;display:block}
+.product-info{padding:16px 2px}
+.product-info h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:500}
+.product-info p{font-size:11px;margin-top:7px;color:#77818a}
+.product-info .add{margin-top:14px;width:100%;border:1px solid var(--blue);background:transparent;padding:12px;font-size:9px;letter-spacing:2px;cursor:pointer;transition:.2s}
 .add:hover{background:var(--blue);color:white}
-.story{display:grid;grid-template-columns:1fr 1fr;min-height:490px;background:#e8e0d3}
+.tag{position:absolute;top:12px;left:12px;background:var(--cream);padding:7px 10px;font-size:8px;letter-spacing:2px;z-index:2}
+
+.quote{text-align:center;padding:75px 20px;background:#e9e2d6}
+.quote p{font:italic 29px 'Playfair Display',serif;max-width:650px;margin:auto;line-height:1.6}
+.quote small{display:block;font-size:9px;letter-spacing:4px;margin-top:22px}
+
+.story{display:grid;grid-template-columns:1fr 1fr;min-height:450px;background:#e8e0d3}
 .story img{width:100%;height:100%;object-fit:cover;min-height:400px}
 .story-content{padding:12%;display:flex;flex-direction:column;justify-content:center}
-.story-content small{font-size:10px;letter-spacing:3px}
-.story-content h2{font:43px 'Playfair Display',serif;font-weight:400;margin:18px 0}
-.story-content p{font-size:13px;line-height:2;color:#68747b;margin-bottom:25px}
-.story-content a{font-size:10px;letter-spacing:2px;border-bottom:1px solid;width:max-content;padding-bottom:7px}
-.newsletter{text-align:center;padding:90px 20px;background:var(--blue);color:white}
-.newsletter h2{font:40px 'Playfair Display',serif;font-weight:400;margin:12px 0}
-.newsletter p{font-size:13px;color:#c5ced2;margin-bottom:25px}
+.story-content small{font-size:9px;letter-spacing:3px}
+.story-content h2{font:40px 'Playfair Display',serif;font-weight:400;margin:18px 0}
+.story-content p{font-size:12px;line-height:2.1;color:#68747b;margin-bottom:25px}
+.story-content a{font-size:9px;letter-spacing:2px;border-bottom:1px solid;width:max-content;padding-bottom:7px}
+
+.newsletter{text-align:center;padding:80px 20px;background:var(--blue);color:white}
+.newsletter h2{font:38px 'Playfair Display',serif;font-weight:400;margin:14px 0}
+.newsletter p{font-size:12px;color:#c5ced2;margin-bottom:25px}
 .newsletter form{display:flex;max-width:420px;margin:auto}
 .newsletter input{flex:1;min-width:0;padding:15px;border:0;background:#f5f1e9}
-.newsletter button{border:0;padding:0 20px;background:#d9cbb5;color:var(--blue);letter-spacing:1px;font-size:10px;cursor:pointer}
-footer{padding:45px 7%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:11px;color:#68747b}
-footer .logo{color:var(--blue)}
+.newsletter button{border:0;padding:0 20px;background:var(--sand);color:var(--blue);font-size:9px;letter-spacing:1px;cursor:pointer}
+footer{padding:45px 7%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:9px;letter-spacing:1px;color:#68747b}
+footer .logo{color:var(--blue);font-size:20px}
 .cart-panel{position:fixed;right:0;top:0;width:min(390px,100%);height:100%;background:var(--white);z-index:10;padding:30px;transform:translateX(105%);transition:.3s;box-shadow:-10px 0 40px #0002;display:flex;flex-direction:column}
 .cart-panel.open{transform:translateX(0)}
 .cart-head{display:flex;justify-content:space-between;font:25px 'Playfair Display',serif;padding-bottom:25px;border-bottom:1px solid #ddd}
 .cart-close{border:0;background:none;font-size:23px;cursor:pointer}
 .cart-items{flex:1;overflow:auto;padding:20px 0}
-.cart-item{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eee;font-size:13px}
-.cart-item button{border:0;background:none;text-decoration:underline;cursor:pointer;font-size:11px}
+.cart-item{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #eee;font-size:12px}
+.cart-item button{border:0;background:none;text-decoration:underline;cursor:pointer;font-size:10px}
 .cart-total{padding:20px 0;border-top:1px solid #ddd;display:flex;justify-content:space-between}
-.cart-note{font-size:11px;color:#777;line-height:1.6;margin-bottom:15px}
+.cart-note{font-size:10px;color:#777;line-height:1.6;margin-bottom:15px}
 .checkout{width:100%;background:var(--blue);color:white;padding:17px;border:0;letter-spacing:2px;cursor:pointer}
 .overlay{display:none;position:fixed;inset:0;background:#0006;z-index:9}
 .overlay.show{display:block}
-@media(max-width:700px){
- header{height:70px;padding:0 5%}
+
+@media(max-width:850px){
+ header{padding:0 4%}
+ nav{gap:13px}
+ .products{grid-template-columns:repeat(2,1fr)}
+ .product-image{height:300px}
+}
+@media(max-width:600px){
+ header{height:75px;padding:0 5%}
+ .logo{font-size:21px}
  nav{display:none}
- .hero{height:570px;padding:7%}
- .section{padding:65px 5%}
- .collections{grid-template-columns:1fr}
- .collection{height:360px}
+ .menu{display:block}
+ .hero{min-height:480px;padding:8%}
+ .hero h1{font-size:53px}
+ .section{padding:60px 5%}
+ .section-heading h2{font-size:32px}
+ .collections{grid-template-columns:1fr;gap:15px}
+ .collection{height:330px}
  .products{grid-template-columns:1fr 1fr;gap:12px}
- .product-image{height:240px}
- .product-info{flex-direction:column}
- .add{width:100%}
+ .product-image{height:230px}
+ .product-info h3{font-size:14px}
  .story{grid-template-columns:1fr}
- .story img{height:300px;min-height:0}
+ .story img{height:280px;min-height:0}
  .story-content{padding:45px 8%}
- .section-heading h2{font-size:34px}
- footer{flex-direction:column}
+ .quote p{font-size:24px}
+ footer{flex-direction:column;text-align:center;align-items:center}
 }
 </style>
 </head>
+
 <body>
 
-<div class="topbar">L'ESPRIT DE LA RIVIERA — COLLECTION 01</div>
+<div class="topbar">THE RIVIERA CLUB — COLLECTION 01 · 2026</div>
 
 <header>
-  <a class="logo" href="#">MAISON D'AZUR</a>
-  <nav>
-    <a href="#collections">Collections</a>
-    <a href="#shop">Boutique</a>
-    <a href="#histoire">Notre univers</a>
-  </nav>
-  <div class="header-right">
-    <a href="#shop">SHOP</a>
-    <a href="#" onclick="openCart();return false">PANIER (<span id="count">0</span>)</a>
-  </div>
+ <button class="menu" onclick="document.getElementById('collections').scrollIntoView()">☰</button>
+ <a class="logo" href="#">
+  THE RIVIERA CLUB
+  <span>EST. ON THE FRENCH RIVIERA</span>
+ </a>
+ <nav>
+  <a href="#collections">Univers</a>
+  <a href="#shop">Boutique</a>
+  <a href="#histoire">Notre histoire</a>
+ </nav>
+ <div class="header-right">
+  <a href="#" onclick="openCart();return false">PANIER (<span id="count">0</span>)</a>
+ </div>
 </header>
 
 <main>
+
 <section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">Between the sea and the sun</div>
-    <h1>La Riviera,<br>autrement.</h1>
-    <p>Un vestiaire inspiré par les routes du Sud, les étés méditerranéens et l'élégance intemporelle de la Côte d'Azur.</p>
-    <a class="btn" href="#shop">Découvrir la collection</a>
-  </div>
+ <div class="hero-content">
+  <div class="eyebrow">Between the sea and the sun</div>
+  <h1>The Riviera<br>is a lifestyle.</h1>
+  <p>Un vestiaire inspiré par les routes du Sud, les étés méditerranéens et l'élégance intemporelle de la Côte d'Azur.</p>
+  <a class="btn" href="#shop">DÉCOUVRIR LA COLLECTION</a>
+ </div>
 </section>
 
 <section class="section" id="collections">
-  <div class="section-heading">
-    <small>Explore our universe</small>
-    <h2>Deux univers. Une même élégance.</h2>
+ <div class="section-heading">
+  <small>Discover our world</small>
+  <h2>Un esprit. Deux univers.</h2>
+ </div>
+ <p class="intro">Des paysages méditerranéens aux automobiles de légende, chaque pièce raconte un fragment de l'art de vivre de la Riviera.</p>
+
+ <div class="collections">
+  <div class="collection">
+   <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1000&q=85" alt="Paysage méditerranéen">
+   <div class="collection-text">
+    <small>01 — THE MEDITERRANEAN</small>
+    <h3>Riviera</h3>
+    <a href="#shop">DÉCOUVRIR</a>
+   </div>
   </div>
-  <p class="intro">Des paysages méditerranéens aux automobiles de légende, chaque pièce raconte un fragment de l'art de vivre du Sud.</p>
-  <div class="collections">
-    <div class="collection">
-      <img src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?auto=format&fit=crop&w=1000&q=85" alt="Paysage méditerranéen">
-      <div class="collection-text">
-        <small>01 — THE MEDITERRANEAN</small>
-        <h3>Riviera</h3>
-        <a href="#shop">DÉCOUVRIR</a>
-      </div>
-    </div>
-    <div class="collection">
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Automobile sportive">
-      <div class="collection-text">
-        <small>02 — THE AUTOMOTIVE CLUB</small>
-        <h3>Automobile</h3>
-        <a href="#shop">DÉCOUVRIR</a>
-      </div>
-    </div>
+  <div class="collection">
+   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Automobile de prestige">
+   <div class="collection-text">
+    <small>02 — THE AUTOMOTIVE CLUB</small>
+    <h3>Automobile</h3>
+    <a href="#shop">DÉCOUVRIR</a>
+   </div>
   </div>
+ </div>
 </section>
 
 <section class="section" id="shop">
-  <div class="section-heading">
-    <small>Collection 01 / 2026</small>
-    <h2>Les pièces sélectionnées</h2>
-  </div>
-  <div class="products">
-    <article class="product">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" alt="T-shirt blanc">
-      </div>
-      <div class="product-info">
-        <div><h3>Riviera Essential Tee</h3><p>Écru · 32,90 €</p></div>
-        <button class="add" onclick="addToCart('Riviera Essential Tee',32.90)">AJOUTER</button>
-      </div>
-    </article>
-    <article class="product">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85" alt="T-shirt lifestyle">
-      </div>
-      <div class="product-info">
-        <div><h3>Monte-Carlo Edition</h3><p>Blanc · 34,90 €</p></div>
-        <button class="add" onclick="addToCart('Monte-Carlo Edition',34.90)">AJOUTER</button>
-      </div>
-    </article>
-    <article class="product">
-      <div class="product-image">
-        <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=800&q=85" alt="T-shirt bleu">
-      </div>
-      <div class="product-info">
-        <div><h3>Le Club — Navy</h3><p>Bleu marine · 32,90 €</p></div>
-        <button class="add" onclick="addToCart('Le Club — Navy',32.90)">AJOUTER</button>
-      </div>
-    </article>
-  </div>
+ <div class="section-heading">
+  <small>Collection 01 / 2026</small>
+  <h2>Collection Originale</h2>
+ </div>
+ <p class="intro">Quatre destinations, quatre inspirations. Découvrez les premières pièces du Riviera Club.</p>
+
+ <div class="products">
+
+  <!-- MONACO -->
+  <article class="product">
+   <div class="product-image">
+    <span class="tag">01 — MONACO</span>
+    <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+     <rect width="400" height="440" fill="#e8e0d3"/>
+     <path d="M60 440 L60 100 Q60 65 95 65 L145 85 L200 68 L255 85 L305 65 Q340 65 340 100 L340 440Z" fill="#f9f5ec" stroke="#d5cbbd" stroke-width="2"/>
+     <path d="M60 100 L145 85 L200 110 L255 85 L340 100" fill="none" stroke="#ded5c8" stroke-width="3"/>
+     <g fill="none" stroke="#243c50" stroke-width="2.5" stroke-linecap="round">
+      <path d="M105 195 L105 165 L120 150 L135 165 L135 195 M95 195 L145 195"/>
+      <path d="M265 195 L265 165 L280 150 L295 165 L295 195 M255 195 L305 195"/>
+      <path d="M155 195 L155 160 L175 135 L225 135 L245 160 L245 195Z"/>
+      <path d="M175 135 L175 115 L225 115 L225 135 M190 115 L190 100 L210 100 L210 115"/>
+      <path d="M175 165 L225 165 M200 135 L200 195"/>
+      <path d="M155 195 L245 195 M185 195 L185 180 L215 180 L215 195"/>
+      <path d="M75 230 Q200 215 325 230"/>
+      <path d="M90 260 Q200 245 310 260"/>
+      <path d="M115 275 L115 230 M108 240 L115 218 L122 240 M285 275 L285 230 M278 240 L285 218 L292 240"/>
+      <path d="M110 295 Q200 280 290 295"/>
+      <path d="M130 325 Q200 310 270 325"/>
+     </g>
+     <g fill="#243c50">
+      <text x="200" y="87" text-anchor="middle" font-family="Georgia" font-size="25" letter-spacing="3">MONACO</text>
+      <text x="200" y="350" text-anchor="middle" font-family="Georgia" font-size="22" font-style="italic">Riviera Club</text>
+     </g>
+     <g fill="none" stroke="#243c50" stroke-width="2">
+      <path d="M120 395 Q145 380 170 390 L225 390 Q250 380 280 395 L275 410 L125 410Z"/>
+      <circle cx="155" cy="411" r="10" fill="#f9f5ec"/>
+      <circle cx="250" cy="411" r="10" fill="#f9f5ec"/>
+      <path d="M170 390 L190 375 L230 375 L245 390"/>
+     </g>
+    </svg>
+   </div>
+   <div class="product-info">
+    <h3>Monaco Edition</h3>
+    <p>Écru · 34,90 €</p>
+    <button class="add" onclick="addToCart('Monaco Edition',34.90)">AJOUTER AU PANIER</button>
+   </div>
+  </article>
+
+  <!-- SAINT TROPEZ -->
+  <article class="product">
+   <div class="product-image">
+    <span class="tag">02 — SAINT-TROPEZ</span>
+    <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+     <rect width="400" height="440" fill="#e3e1dc"/>
+     <path d="M60 440 L60 100 Q60 65 95 65 L145 85 L200 68 L255 85 L305 65 Q340 65 340 100 L340 440Z" fill="#182f43" stroke="#263c50" stroke-width="2"/>
+     <path d="M60 100 L145 85 L200 110 L255 85 L340 100" fill="none" stroke="#344c5d" stroke-width="3"/>
+     <g fill="none" stroke="#f4f0e8" stroke-width="2">
+      <path d="M95 230 Q200 215 305 230 M95 245 Q200 230 305 245"/>
+      <path d="M110 280 L290 280 M125 290 L275 290"/>
+      <path d="M200 130 L200 265 M200 140 L265 230 L200 230Z"/>
+      <path d="M190 265 L190 280 L280 280 L290 265Z"/>
+      <path d="M190 265 Q200 255 210 265"/>
+      <path d="M100 190 L100 150 M90 160 L100 140 L110 160"/>
+      <path d="M300 190 L300 150 M290 160 L300 140 L310 160"/>
+      <path d="M115 310 Q200 295 285 310"/>
+      <path d="M140 330 Q200 320 260 330"/>
+     </g>
+     <g fill="#f4f0e8" font-family="Georgia">
+      <text x="200" y="105" text-anchor="middle" font-size="25" letter-spacing="2">SAINT-TROPEZ</text>
+      <text x="200" y="360" text-anchor="middle" font-size="23" font-style="italic">Riviera Club</text>
+     </g>
+     <path d="M180 390 L200 380 L220 390 M200 380 L200 405 M185 395 L215 395" fill="none" stroke="#f4f0e8" stroke-width="2"/>
+    </svg>
+   </div>
+   <div class="product-info">
+    <h3>Saint-Tropez Edition</h3>
+    <p>Bleu marine · 34,90 €</p>
+    <button class="add" onclick="addToCart('Saint-Tropez Edition',34.90)">AJOUTER AU PANIER</button>
+   </div>
+  </article>
+
+  <!-- RICH RIVIERA -->
+  <article class="product">
+   <div class="product-image">
+    <span class="tag">03 — AUTOMOTIVE</span>
+    <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+     <rect width="400" height="440" fill="#e8e0d3"/>
+     <path d="M60 440 L60 100 Q60 65 95 65 L145 85 L200 68 L255 85 L305 65 Q340 65 340 100 L340 440Z" fill="#faf6ed" stroke="#d5cbbd" stroke-width="2"/>
+     <g fill="#1c3449" font-family="Georgia" text-anchor="middle">
+      <text x="200" y="150" font-size="48" letter-spacing="4">RICH</text>
+      <text x="200" y="175" font-size="12" letter-spacing="4">RIVIERA CLUB</text>
+     </g>
+     <g fill="none" stroke="#1c3449" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M90 285 L110 270 L135 260 L160 225 L225 215 L260 230 L290 255 L315 265 L325 290 L315 305 L95 305Z"/>
+      <path d="M160 225 L175 260 L270 260 L260 230"/>
+      <path d="M185 225 L200 260 M220 225 L245 260"/>
+      <path d="M110 270 L315 270"/>
+      <circle cx="145" cy="305" r="22" fill="#faf6ed"/>
+      <circle cx="145" cy="305" r="10"/>
+      <circle cx="280" cy="305" r="22" fill="#faf6ed"/>
+      <circle cx="280" cy="305" r="10"/>
+      <path d="M85 335 Q200 350 325 335"/>
+     </g>
+     <g fill="#1c3449" font-family="Georgia" text-anchor="middle">
+      <text x="200" y="385" font-size="14" letter-spacing="3">CÔTE D'AZUR</text>
+      <text x="200" y="405" font-size="11" letter-spacing="3">FRANCE · EST. 2026</text>
+     </g>
+    </svg>
+   </div>
+   <div class="product-info">
+    <h3>Rich Riviera</h3>
+    <p>Écru · 34,90 €</p>
+    <button class="add" onclick="addToCart('Rich Riviera',34.90)">AJOUTER AU PANIER</button>
+   </div>
+  </article>
+
+  <!-- DOLCE VITA -->
+  <article class="product">
+   <div class="product-image">
+    <span class="tag">04 — LA DOLCE VITA</span>
+    <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+     <rect width="400" height="440" fill="#e5dfd3"/>
+     <path d="M60 440 L60 100 Q60 65 95 65 L145 85 L200 68 L255 85 L305 65 Q340 65 340 100 L340 440Z" fill="#faf6ed" stroke="#d5cbbd" stroke-width="2"/>
+     <g fill="#21394c" font-family="Georgia" text-anchor="middle">
+      <text x="200" y="130" font-size="34" font-style="italic">La Dolce Vita</text>
+     </g>
+     <g fill="none" stroke="#21394c" stroke-width="2">
+      <path d="M85 285 L85 230 L125 200 L165 230 L165 285Z"/>
+      <path d="M165 285 L165 190 L210 160 L255 190 L255 285Z"/>
+      <path d="M255 285 L255 225 L290 195 L325 225 L325 285Z"/>
+      <path d="M165 190 L165 160 L210 140 L255 160 L255 190"/>
+      <path d="M185 205 L205 205 L205 230 L185 230Z M220 205 L240 205 L240 230 L220 230Z"/>
+      <path d="M100 245 L125 245 L125 270 L100 270Z"/>
+      <path d="M275 240 L300 240 L300 270 L275 270Z"/>
+      <path d="M75 300 Q200 280 330 300"/>
+      <path d="M90 320 Q200 305 310 320"/>
+      <path d="M100 340 Q200 325 300 340"/>
+      <path d="M140 355 L140 335 L150 325 L160 335 L160 355 M250 355 L250 335 L260 325 L270 335 L270 355"/>
+     </g>
+     <g fill="#21394c">
+      <text x="200" y="390" text-anchor="middle" font-family="Georgia" font-size="22" font-style="italic">Côte Privée</text>
+      <text x="200" y="412" text-anchor="middle" font-family="Georgia" font-size="10" letter-spacing="4">RIVIERA CLUB</text>
+     </g>
+    </svg>
+   </div>
+   <div class="product-info">
+    <h3>La Dolce Vita</h3>
+    <p>Écru · 34,90 €</p>
+    <button class="add" onclick="addToCart('La Dolce Vita',34.90)">AJOUTER AU PANIER</button>
+   </div>
+  </article>
+
+ </div>
+</section>
+
+<section class="quote">
+ <p>« La Riviera n'est pas seulement une destination. C'est une façon de vivre. »</p>
+ <small>THE RIVIERA CLUB</small>
 </section>
 
 <section class="story" id="histoire">
-  <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=1200&q=85" alt="Architecture de la Riviera">
-  <div class="story-content">
-    <small>THE ART OF THE RIVIERA</small>
-    <h2>Un certain art de vivre.</h2>
-    <p>Inspirée par les façades ensoleillées, les routes côtières et les souvenirs d'été, Maison d'Azur imagine un vestiaire entre héritage méditerranéen et culture automobile.</p>
-    <a href="#collections">DÉCOUVRIR NOTRE UNIVERS</a>
-  </div>
+ <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=1200&q=85" alt="Architecture méditerranéenne">
+ <div class="story-content">
+  <small>THE ART OF THE RIVIERA</small>
+  <h2>Un certain art de vivre.</h2>
+  <p>Inspiré par Monaco, Saint-Tropez, les routes côtières et les souvenirs d'été, The Riviera Club imagine un vestiaire entre héritage méditerranéen et culture automobile.</p>
+  <a href="#shop">DÉCOUVRIR LA COLLECTION</a>
+ </div>
 </section>
 
 <section class="newsletter">
-  <small>THE RIVIERA LETTER</small>
-  <h2>Quelques nouvelles du Sud.</h2>
-  <p>Inscrivez-vous pour découvrir les prochaines collections.</p>
-  <form onsubmit="event.preventDefault();alert('Merci ! La newsletter sera activée prochainement.');">
-    <input type="email" placeholder="Votre adresse e-mail" required>
-    <button type="submit">S'INSCRIRE</button>
-  </form>
+ <small>THE RIVIERA LETTER</small>
+ <h2>Quelques nouvelles du Sud.</h2>
+ <p>Inscrivez-vous pour découvrir les prochaines collections.</p>
+ <form onsubmit="event.preventDefault();alert('Merci pour votre intérêt !');">
+  <input type="email" placeholder="Votre adresse e-mail" required>
+  <button type="submit">S'INSCRIRE</button>
+ </form>
 </section>
+
 </main>
 
 <footer>
-  <a class="logo" href="#">MAISON D'AZUR</a>
-  <span>© 2026 MAISON D'AZUR — TOUS DROITS RÉSERVÉS</span>
-  <span>CONTACT · INSTAGRAM · CONDITIONS</span>
+ <a class="logo" href="#">THE RIVIERA CLUB<span>EST. ON THE FRENCH RIVIERA</span></a>
+ <span>© 2026 THE RIVIERA CLUB — TOUS DROITS RÉSERVÉS</span>
+ <span>CONTACT · INSTAGRAM · CONDITIONS</span>
 </footer>
 
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
 <aside class="cart-panel" id="cart">
-  <div class="cart-head"><span>Votre panier</span><button class="cart-close" onclick="closeCart()">×</button></div>
-  <div class="cart-items" id="cartItems">Votre panier est vide.</div>
-  <div class="cart-total"><strong>Total</strong><strong id="total">0,00 €</strong></div>
-  <p class="cart-note">Démonstration : le paiement en ligne n'est pas encore activé.</p>
-  <button class="checkout" onclick="alert('Le paiement sera disponible lors de la mise en place de la boutique officielle.')">COMMANDER</button>
+ <div class="cart-head">
+  <span>Votre panier</span>
+  <button class="cart-close" onclick="closeCart()">×</button>
+ </div>
+ <div class="cart-items" id="cartItems">Votre panier est vide.</div>
+ <div class="cart-total"><strong>Total</strong><strong id="total">0,00 €</strong></div>
+ <p class="cart-note">Démonstration : le paiement en ligne n'est pas encore activé.</p>
+ <button class="checkout" onclick="alert('Le paiement sera disponible lors du lancement officiel.')">COMMANDER</button>
 </aside>
 
 <script>
 let cart=[];
+
 function addToCart(name,price){
-  const found=cart.find(item=>item.name===name);
-  if(found) found.qty++;
-  else cart.push({name,price,qty:1});
-  updateCart();
-  openCart();
+ const found=cart.find(item=>item.name===name);
+ if(found)found.qty++;
+ else cart.push({name,price,qty:1});
+ updateCart();
+ openCart();
 }
+
 function updateCart(){
-  const count=cart.reduce((sum,item)=>sum+item.qty,0);
-  document.getElementById('count').textContent=count;
-  document.getElementById('cartItems').innerHTML=cart.length?cart.map((item,index)=>`
-    <div class="cart-item">
-      <div><strong>${item.name}</strong><br>${item.price.toFixed(2).replace('.',',')} € × ${item.qty}</div>
-      <div><button onclick="removeItem(${index})">Retirer</button></div>
-    </div>`).join(''):'Votre panier est vide.';
-  const total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
-  document.getElementById('total').textContent=total.toFixed(2).replace('.',',')+' €';
+ const count=cart.reduce((sum,item)=>sum+item.qty,0);
+ document.getElementById('count').textContent=count;
+
+ document.getElementById('cartItems').innerHTML=cart.length?
+ cart.map((item,index)=>`
+ <div class="cart-item">
+  <div><strong>${item.name}</strong><br>
+  ${item.price.toFixed(2).replace('.',',')} € × ${item.qty}</div>
+  <div><button onclick="removeItem(${index})">Retirer</button></div>
+ </div>`).join(''):'Votre panier est vide.';
+
+ const total=cart.reduce((sum,item)=>sum+item.price*item.qty,0);
+ document.getElementById('total').textContent=total.toFixed(2).replace('.',',')+' €';
 }
+
 function removeItem(index){
-  cart.splice(index,1);
-  updateCart();
+ cart.splice(index,1);
+ updateCart();
 }
+
 function openCart(){
-  document.getElementById('cart').classList.add('open');
-  document.getElementById('overlay').classList.add('show');
+ document.getElementById('cart').classList.add('open');
+ document.getElementById('overlay').classList.add('show');
 }
+
 function closeCart(){
-  document.getElementById('cart').classList.remove('open');
-  document.getElementById('overlay').classList.remove('show');
+ document.getElementById('cart').classList.remove('open');
+ document.getElementById('overlay').classList.remove('show');
 }
 </script>
+
 </body>
 </html>
