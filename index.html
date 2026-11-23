@@ -3,216 +3,318 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>THE RIVIERA CLUB — Côte d'Azur</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{--cream:#f3eee5;--navy:#172a3b;--gold:#c1a77e;--ink:#222a30}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-.announcement{background:var(--navy);color:white;text-align:center;padding:10px;font-size:9px;letter-spacing:3px}
-header{height:82px;padding:0 6%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:var(--cream);position:relative;z-index:3}
-.nav{display:flex;gap:25px;font-size:9px;letter-spacing:1.8px;text-transform:uppercase}
-.nav.right{justify-content:flex-end}
-.brand{text-align:center;font:24px 'Playfair Display',serif;line-height:1.05;letter-spacing:1px}
-.brand small{display:block;font:8px 'DM Sans',sans-serif;letter-spacing:3px;margin-top:7px}
-.cart{border:0;background:none;font-size:10px}
-.hero{min-height:690px;display:flex;align-items:center;padding:8%;color:white;background:linear-gradient(90deg,rgba(8,19,29,.72),rgba(8,19,29,.05)),url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=2200&q=90') center/cover}
-.hero-content{max-width:600px}
-.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase}
-.hero h1{font:400 clamp(55px,8vw,100px)/.98 'Playfair Display',serif;margin:25px 0}
-.hero p{max-width:410px;line-height:1.9;font-size:15px;color:#f0e8dc}
-.button{display:inline-block;padding:16px 25px;margin-top:20px;background:var(--cream);color:var(--navy);font-size:9px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--cream)}
-.button:hover{background:transparent;color:white}
-.intro{text-align:center;padding:85px 20px 45px}
-.intro .eyebrow{color:var(--gold)}
-h2{font:400 clamp(36px,5vw,57px)/1.1 'Playfair Display',serif;margin:15px 0}
-.intro p{font:italic 16px 'Playfair Display',serif;color:#80776c}
-.collection{padding:15px 5% 90px}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.product{text-align:center;min-width:0}
-.product-image{width:100%;aspect-ratio:1/1.08;background-image:url('collection-tees.jpg');background-size:200% 200%;background-repeat:no-repeat;background-color:#e6dccd}
-.monaco{background-position:0 0}
-.tropez{background-position:100% 0}
-.automotive{background-position:0 100%}
-.privee{background-position:100% 100%}
-.product h3{font:400 19px 'Playfair Display',serif;margin:18px 0 6px}
-.price{font-size:12px;color:#82796e}
-.product button{margin-top:15px;padding:12px 16px;border:1px solid var(--navy);background:transparent;color:var(--navy);font-size:9px;letter-spacing:1px;text-transform:uppercase}
-.product button:hover{background:var(--navy);color:white}
-.note{text-align:center;color:#81796e;font-size:11px;line-height:1.8;max-width:700px;margin:30px auto 0}
-
-/* Les deux univers prennent toute la largeur */
-.univers{display:grid;grid-template-columns:1fr 1fr}
-.univers-card{min-height:650px;position:relative;display:flex;align-items:flex-end;padding:55px;color:white;background-size:cover;background-position:center;overflow:hidden}
-.univers-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,17,25,.78),rgba(7,17,25,.03) 80%);transition:.4s}
-.univers-card:hover:before{background:linear-gradient(0deg,rgba(7,17,25,.85),rgba(7,17,25,.15))}
-.riviera{background-image:url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1500&q=90')}
-.auto{background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1500&q=90')}
-.univers-content{position:relative;z-index:1}
-.univers h2{font-size:clamp(42px,5vw,65px);margin:12px 0}
-.univers p{font-size:13px;line-height:1.8;max-width:350px}
-.univers .button{background:transparent;color:white;border-color:white}
-.univers .button:hover{background:white;color:var(--navy)}
-.statement{padding:100px 10%;text-align:center;background:#e8dfd2}
-.statement .eyebrow{color:#a18a68}
-.statement p{max-width:650px;margin:20px auto;line-height:2;font-size:14px;color:#625d56}
-.full-photo{height:570px;background:url('https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=2000&q=90') center 55%/cover;position:relative}
-.full-photo:after{content:"LA DOLCE VITA";position:absolute;bottom:45px;left:7%;font:clamp(38px,7vw,78px) 'Playfair Display',serif;color:white;letter-spacing:2px;text-shadow:0 2px 15px #333}
-.gallery{padding:80px 5%;text-align:center}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:35px}
-.gallery-grid img{width:100%;height:320px;object-fit:cover}
-.newsletter{background:var(--navy);color:white;text-align:center;padding:65px 6%}
-.newsletter h2{font-size:40px}
-.newsletter p{font-size:12px;color:#ddd2c3}
-.signup{display:flex;gap:8px;max-width:500px;margin:25px auto}
-.signup input{flex:1;min-width:0;padding:15px;border:0;background:var(--cream)}
-.signup button{padding:0 22px;border:0;background:var(--cream);color:var(--navy);font-size:9px;letter-spacing:1px}
-footer{padding:35px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.footer-brand{font:22px 'Playfair Display',serif}
-.footer-links{display:flex;gap:20px;font-size:10px}
-.copyright{font-size:10px;color:#82796e}
-@media(max-width:800px){
- header{padding:0 3%;height:75px}
- .nav{gap:10px;font-size:8px}.nav a:nth-child(2){display:none}
- .brand{font-size:18px}
- .hero{min-height:570px;padding:8%}
- .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 12px}
- .univers{grid-template-columns:1fr}
- .univers-card{min-height:540px;padding:35px}
- .full-photo{height:400px}
- .gallery-grid{grid-template-columns:1fr 1fr}
- .gallery-grid img{height:190px}
- footer{justify-content:center;text-align:center}
- .footer-links{justify-content:center;flex-wrap:wrap;width:100%}
+:root {
+  --cream:#f2ece2;
+  --navy:#142330;
+  --gold:#aa9270;
+  --ink:#242a2d;
 }
-@media(max-width:420px){
- .hero h1{font-size:54px}
- .signup{flex-direction:column}
- .signup button{padding:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Montserrat',sans-serif;
+}
+a{text-decoration:none;color:inherit}
+.topbar{
+  background:var(--navy);
+  color:#f4eee4;
+  text-align:center;
+  padding:10px;
+  font-size:10px;
+  letter-spacing:4px;
+}
+header{
+  position:absolute;
+  z-index:5;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 2fr 1fr;
+  align-items:center;
+  padding:28px 5%;
+  color:white;
+}
+nav{display:flex;gap:25px;font-size:10px;letter-spacing:2px}
+.logo{text-align:center;font-family:'Cormorant Garamond',serif}
+.logo small{display:block;font-size:12px;letter-spacing:4px}
+.logo strong{font-size:32px;font-weight:500;letter-spacing:2px}
+.logo span{display:block;font-family:Montserrat;font-size:9px;letter-spacing:5px}
+.header-right{text-align:right;font-size:10px;letter-spacing:2px}
+.hero{
+  min-height:690px;
+  height:88vh;
+  max-height:850px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:8%;
+  color:#fff;
+  background:
+  linear-gradient(90deg,rgba(9,18,25,.65),rgba(9,18,25,.05)),
+  url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=2200&q=90') center 48%/cover;
+}
+.hero-content{max-width:600px;margin-top:60px}
+.eyebrow{font-size:10px;letter-spacing:4px;margin-bottom:22px}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:400}
+.hero h1{font-size:clamp(55px,8vw,100px);line-height:.9;margin-bottom:25px}
+.hero p{font-family:'Cormorant Garamond',serif;font-size:25px;font-style:italic;margin-bottom:32px}
+.button{
+  display:inline-block;
+  padding:15px 25px;
+  border:1px solid currentColor;
+  font-size:10px;
+  letter-spacing:2px;
+  transition:.3s;
+}
+.button:hover{background:white;color:var(--navy)}
+.collection{padding:75px 4% 85px;text-align:center}
+.section-label{font-size:10px;letter-spacing:4px;margin-bottom:12px}
+.collection h2{font-size:clamp(34px,5vw,52px);margin-bottom:42px}
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+.product-photo{
+  width:100%;
+  aspect-ratio:1.28/1;
+  background-image:url('riviera-shirts.jpg');
+  background-repeat:no-repeat;
+  background-size:400% 100%;
+  background-position-y:center;
+  background-color:#e9e0d3;
+}
+.product:nth-child(1) .product-photo{background-position-x:0%}
+.product:nth-child(2) .product-photo{background-position-x:33.333%}
+.product:nth-child(3) .product-photo{background-position-x:66.666%}
+.product:nth-child(4) .product-photo{background-position-x:100%}
+.product h3{font-size:25px;margin-top:18px}
+.price{font-size:12px;margin:5px 0 16px}
+.add{
+  border:1px solid #777;
+  background:transparent;
+  padding:11px 17px;
+  font-size:9px;
+  letter-spacing:1.5px;
+  cursor:pointer;
+}
+.add:hover{background:var(--navy);color:white}
+.universes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:460px;
+}
+.universe{
+  min-height:460px;
+  display:flex;
+  align-items:flex-end;
+  padding:50px;
+  color:white;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+.universe:before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.6),transparent 75%);
+}
+.universe-content{position:relative}
+.universe h2{font-size:54px}
+.universe p{font-family:'Cormorant Garamond';font-style:italic;font-size:21px;margin:5px 0 22px}
+.riviera{
+  background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85');
+}
+.automotive{
+  background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=85');
+}
+.story{
+  padding:100px 10%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:70px;
+}
+.story-image{
+  min-height:430px;
+  background:url('https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=1200&q=85') center/cover;
+}
+.story h2{font-size:53px;margin:15px 0}
+.story p{font-family:'Cormorant Garamond';font-size:21px;line-height:1.5;color:#555}
+.newsletter{
+  text-align:center;
+  padding:90px 20px;
+  color:white;
+  background:linear-gradient(rgba(13,28,40,.78),rgba(13,28,40,.85)),
+  url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1800&q=85') center/cover;
+}
+.newsletter h2{font-size:54px;margin:10px 0}
+.newsletter p{font-family:'Cormorant Garamond';font-size:20px;margin-bottom:25px}
+.newsletter form{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.newsletter input{padding:15px;width:min(350px,80vw);border:0;background:var(--cream)}
+.newsletter button{padding:15px 22px;background:transparent;border:1px solid white;color:white;font-size:10px;letter-spacing:2px;cursor:pointer}
+footer{
+  padding:35px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+footer .logo{color:var(--navy)}
+.footer-links{display:flex;gap:25px;font-size:11px}
+.copyright{font-size:9px;color:#777}
+@media(max-width:750px){
+  header{grid-template-columns:1fr 2fr 1fr;padding:20px 4%}
+  nav{gap:10px;font-size:8px}
+  .logo strong{font-size:23px}
+  .logo small{font-size:9px}
+  .logo span{font-size:7px}
+  .header-right{font-size:8px}
+  .hero{min-height:620px;height:78vh;background-position:58% center}
+  .hero h1{font-size:62px}
+  .products{grid-template-columns:repeat(2,1fr);gap:25px 12px}
+  .collection{padding:60px 4%}
+  .universes{grid-template-columns:1fr}
+  .universe{min-height:360px;padding:30px}
+  .story{grid-template-columns:1fr;padding:65px 7%;gap:30px}
+  .story-image{min-height:300px}
+  footer{justify-content:center;text-align:center}
+  .footer-links{justify-content:center;flex-wrap:wrap}
 }
 </style>
 </head>
 
 <body>
-<div class="announcement">LIVRAISON OFFERTE À PARTIR DE 100 €</div>
+<div class="topbar">LIVRAISON OFFERTE À PARTIR DE 100€</div>
 
 <header>
-<nav class="nav"><a href="#collection">Collection</a><a href="#univers">Nos univers</a></nav>
-<a class="brand" href="#">THE<br>RIVIERA CLUB<small>CÔTE D’AZUR</small></a>
-<nav class="nav right"><a href="#histoire">Notre histoire</a><button class="cart" onclick="showCart()">PANIER (<span id="count">0</span>)</button></nav>
+  <nav>
+    <a href="#collection">COLLECTION</a>
+    <a href="#univers">UNIVERS</a>
+  </nav>
+  <div class="logo">
+    <small>THE</small>
+    <strong>RIVIERA CLUB</strong>
+    <span>CÔTE D'AZUR</span>
+  </div>
+  <div class="header-right"><a href="#apropos">À PROPOS</a></div>
 </header>
 
-<main>
 <section class="hero">
-<div class="hero-content">
-<div class="eyebrow">THE RIVIERA CLUB · EST. 2026</div>
-<h1>Two worlds.<br>One spirit.</h1>
-<p>Deux univers, une même passion : l'élégance de la Riviera et le caractère des automobiles de légende.</p>
-<a class="button" href="#univers">Découvrir nos univers</a>
-</div>
+  <div class="hero-content">
+    <div class="eyebrow">THE RIVIERA CLUB</div>
+    <h1>Un esprit,<br>deux univers.</h1>
+    <p>La Riviera et l'automobile,<br>une même passion.</p>
+    <a class="button" href="#collection">DÉCOUVRIR LA COLLECTION →</a>
+  </div>
 </section>
 
-<section class="intro" id="collection">
-<div class="eyebrow">THE FIRST COLLECTION</div>
-<h2>La Riviera Collection</h2>
-<p>Des destinations iconiques, illustrées avec caractère.</p>
+<section class="collection" id="collection">
+  <div class="section-label">THE RIVIERA COLLECTION</div>
+  <h2>Quatre destinations. Une même élégance.</h2>
+
+  <div class="products">
+    <article class="product">
+      <div class="product-photo"></div>
+      <h3>Monaco Club</h3>
+      <div class="price">34,00 €</div>
+      <button class="add" onclick="addToCart('Monaco Club')">AJOUTER AU PANIER</button>
+    </article>
+
+    <article class="product">
+      <div class="product-photo"></div>
+      <h3>Saint-Tropez</h3>
+      <div class="price">34,00 €</div>
+      <button class="add" onclick="addToCart('Saint-Tropez')">AJOUTER AU PANIER</button>
+    </article>
+
+    <article class="product">
+      <div class="product-photo"></div>
+      <h3>Riviera Automotive</h3>
+      <div class="price">34,00 €</div>
+      <button class="add" onclick="addToCart('Riviera Automotive')">AJOUTER AU PANIER</button>
+    </article>
+
+    <article class="product">
+      <div class="product-photo"></div>
+      <h3>Côte Privée</h3>
+      <div class="price">34,00 €</div>
+      <button class="add" onclick="addToCart('Côte Privée')">AJOUTER AU PANIER</button>
+    </article>
+  </div>
 </section>
 
-<section class="collection">
-<div class="products">
-<article class="product">
-<div class="product-image monaco" role="img" aria-label="Tee-shirt Monaco, devant et dos"></div>
-<h3>Monaco Club</h3><div class="price">34,00 €</div>
-<button onclick="add('Monaco Club')">Ajouter au panier</button>
-</article>
-<article class="product">
-<div class="product-image tropez" role="img" aria-label="Tee-shirt Saint-Tropez, devant et dos"></div>
-<h3>Saint-Tropez</h3><div class="price">34,00 €</div>
-<button onclick="add('Saint-Tropez')">Ajouter au panier</button>
-</article>
-<article class="product">
-<div class="product-image automotive" role="img" aria-label="Tee-shirt Riviera Automotive, devant et dos"></div>
-<h3>Riviera Automotive</h3><div class="price">34,00 €</div>
-<button onclick="add('Riviera Automotive')">Ajouter au panier</button>
-</article>
-<article class="product">
-<div class="product-image privee" role="img" aria-label="Tee-shirt Côte Privée, devant et dos"></div>
-<h3>Côte Privée</h3><div class="price">34,00 €</div>
-<button onclick="add('Côte Privée')">Ajouter au panier</button>
-</article>
-</div>
-<p class="note">Maquettes de création : tee-shirts en coton avec petit logo devant et illustrations originales dans le dos. Les visuels définitifs seront photographiés après réalisation des prototypes.</p>
+<section class="universes" id="univers">
+  <div class="universe riviera">
+    <div class="universe-content">
+      <div class="eyebrow">UNIVERS N°01</div>
+      <h2>Riviera.</h2>
+      <p>Élégance et art de vivre.</p>
+      <a class="button" href="#collection">EXPLORER →</a>
+    </div>
+  </div>
+  <div class="universe automotive">
+    <div class="universe-content">
+      <div class="eyebrow">UNIVERS N°02</div>
+      <h2>Automotive.</h2>
+      <p>Passion et mécanique.</p>
+      <a class="button" href="#collection">EXPLORER →</a>
+    </div>
+  </div>
 </section>
 
-<section class="univers" id="univers">
-<article class="univers-card riviera">
-<div class="univers-content">
-<div class="eyebrow">UNIVERS 01</div>
-<h2>La Riviera.</h2>
-<p>Monaco, Saint-Tropez, les villas, les ports et les paysages baignés de soleil.</p>
-<a class="button" href="#collection">Explorer la Riviera</a>
-</div>
-</article>
-<article class="univers-card auto">
-<div class="univers-content">
-<div class="eyebrow">UNIVERS 02</div>
-<h2>Automotive.</h2>
-<p>Les automobiles de collection, les routes mythiques et l'élégance mécanique.</p>
-<a class="button" href="#collection">Explorer Automotive</a>
-</div>
-</article>
-</section>
-
-<section class="statement" id="histoire">
-<div class="eyebrow">THE RIVIERA CLUB</div>
-<h2>Un esprit. Deux univers.</h2>
-<p>Inspiré par la beauté de la Méditerranée et la passion automobile, THE RIVIERA CLUB imagine un vestiaire qui raconte une histoire. Celle des belles destinations, des routes de caractère et d'un art de vivre intemporel.</p>
-</section>
-
-<section class="full-photo"></section>
-
-<section class="gallery">
-<div class="eyebrow">THE RIVIERA MOOD</div>
-<h2>Une certaine idée du Sud.</h2>
-<div class="gallery-grid">
-<img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=85" alt="Village de la Riviera">
-<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85" alt="Mer Méditerranée">
-<img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=900&q=85" alt="Architecture méditerranéenne">
-</div>
+<section class="story" id="apropos">
+  <div class="story-image"></div>
+  <div>
+    <div class="section-label">NOTRE PHILOSOPHIE</div>
+    <h2>Un certain art de vivre.</h2>
+    <p>
+      Inspiré par les paysages de la Côte d'Azur,
+      les belles mécaniques et l'élégance intemporelle,
+      THE RIVIERA CLUB célèbre deux univers réunis
+      par une même passion : le goût du beau.
+    </p>
+  </div>
 </section>
 
 <section class="newsletter">
-<div class="eyebrow">THE RIVIERA LETTER</div>
-<h2>Entrez dans le club.</h2>
-<p>Découvrez nos prochaines collections et nos actualités.</p>
-<form class="signup" onsubmit="event.preventDefault();alert('Merci ! La newsletter sera activée prochainement.');">
-<input type="email" placeholder="Votre adresse e-mail" required>
-<button type="submit">S'inscrire</button>
-</form>
+  <div class="eyebrow">THE RIVIERA CLUB</div>
+  <h2>Entrez dans le club.</h2>
+  <p>Recevez nos nouvelles collections et nos actualités.</p>
+  <form onsubmit="event.preventDefault();alert('Merci pour votre inscription !');">
+    <input type="email" placeholder="Votre adresse e-mail" required>
+    <button type="submit">S'INSCRIRE</button>
+  </form>
 </section>
-</main>
 
 <footer>
-<div class="footer-brand">THE RIVIERA CLUB</div>
-<div class="footer-links"><a href="mailto:contact@therivieraclub.fr">Contact</a><a href="#">Instagram</a><a href="#">Mentions légales</a></div>
-<div class="copyright">© 2026 THE RIVIERA CLUB</div>
+  <div class="logo">
+    <small>THE</small>
+    <strong>RIVIERA CLUB</strong>
+    <span>CÔTE D'AZUR</span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:contact@therivieraclub.fr">Contact</a>
+    <a href="#">Instagram</a>
+    <a href="#">Mentions légales</a>
+    <a href="#">FAQ</a>
+  </div>
+  <div class="copyright">© 2026 THE RIVIERA CLUB. Tous droits réservés.</div>
 </footer>
 
 <script>
 let cart=[];
-function add(name){
-cart.push(name);
-document.getElementById('count').textContent=cart.length;
-alert(name+' ajouté au panier.');
-}
-function showCart(){
-if(!cart.length){alert('Votre panier est vide.');return;}
-alert('Votre panier :\n'+cart.map((x,i)=>(i+1)+'. '+x+' — 34 €').join('\n')+'\n\nTotal : '+cart.length*34+' €\n\nPaiement en ligne non activé.');
+function addToCart(product){
+  cart.push(product);
+  alert(product+" ajouté au panier. Articles : "+cart.length);
 }
 </script>
 </body>
